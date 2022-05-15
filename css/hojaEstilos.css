@@ -1,0 +1,12 @@
+.espacioNav li{
+    padding-right: 20px;
+}
+
+.fondoBoton{
+    background-color: #1b1e7b;
+}
+
+.classFrame{
+    width: 100%;
+    height: 850px;
+}

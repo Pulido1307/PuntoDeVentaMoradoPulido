@@ -61,11 +61,17 @@ if (array_key_exists('eliminar', $_REQUEST)) {
 
     <!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">
+
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
     <!-- Navigation -->
-    
+
 
     <section>
         <div class="header">
@@ -124,7 +130,7 @@ if (array_key_exists('eliminar', $_REQUEST)) {
                             </svg>
                             <h4>Clientes</h4>
                             <p><a class="" href="formularioAltaClienteView.php" target="">Alta</a></p>
-                            
+
                         </div> <!-- end of text-box -->
                     </div> <!-- end of col -->
                     <div class="col-lg-4">

@@ -1,10 +1,9 @@
 .container_tabla {
     width: 95%;
     margin: 10px auto;
-    margin-top: 100px;
     font-size: 16px;
     margin-left: 50px;
-    margin-bottom: 150px;
+    margin-bottom: 50px;
 }
 
 .btn_eye {
@@ -16,3 +15,4 @@
 .backop{
     background-color: #1b1e7b;
 }
+

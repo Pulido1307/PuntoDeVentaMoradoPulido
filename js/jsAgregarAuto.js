@@ -48,12 +48,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
             button_guardar.style.display = "block";
         }
-
     });
 
 
     button_guardar.addEventListener('click', () => {
-        alert('Datos guardados');
+        var dataSend = {
+            data_iva:iva,
+            data_subtotal:subtotal,
+            data_tota:precio_total
+        };
+
+        //console.log(JSON.stringify(dataSend));
+
+        $.ajax({
+            type: "POST",
+            url: '/MoradoSalvadorPulidoAntonio/MVC/Models/AltaVenta.php', 
+            data: dataSend,
+            success: function (response) {
+                var jsonData = JSON.parse(response);
+                console.log(jsonData);
+                alert(jsonData);
+                // if (jsonData.success == "1") //respuesta exitosa envia a otro archivo
+                // {
+                //     location.href = 'paginaredireccionasiesexitosa.php';
+                // }
+                // else {
+                //     alert('Error al enviar los datos');
+                // }
+            }
+        });
     });
 
 

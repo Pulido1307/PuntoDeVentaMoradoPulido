@@ -109,9 +109,10 @@ class ConexionDBModel
         $sentenciasSQL = "SELECT * FROM auto";
         try {
             return $this->con->query($sentenciasSQL);
-            //regresa todos los registros
+            //regresa todos los registros 
         } catch (Exception $e) {
-            echo $e;
+            echo $e; 
+
         }
     }
 

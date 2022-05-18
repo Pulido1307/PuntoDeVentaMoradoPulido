@@ -7,13 +7,12 @@ class VentaController{
         $this->objModel= new ConexionDBModel();
     }
 
-    public function hacerVenta($ns, $rfc){
+    public function hacerVenta($rfc){
         $resCliente = $this->objModel->consultarClienteAux($rfc);
-        $resAuto = $this->objModel->consultarAutoAux($ns);
-        if($resCliente and $resAuto){
+        if($resCliente){
             return "Datos correctos";
         }else{
-            return "No existe el rfc o ns ingresados.";
+            return "No existe el RFC ingresado.";
         }
     }
 }

@@ -7,13 +7,16 @@ $objAutoController = new AutoController();
 
 if (array_key_exists('venta', $_REQUEST)) {
     //print($_REQUEST['input_ns']);
-    if (isset($_REQUEST['input_ns']) and isset($_REQUEST['input_rfc'])) {
-        $res = $objVentaController->hacerVenta($_REQUEST['input_ns'], $_REQUEST['input_rfc']);
+    if (isset($_REQUEST['input_rfc'])) {
+        $res = $objVentaController->hacerVenta($_REQUEST['input_rfc']);
+        if(strcmp($res, "No existe el RFC ingresado.")==0){
+            header("Location: formularioVentaView.php?error=$res");
+            exit();
+        }
         echo "<script>alert('$res');</script>";
     }
 }
 $objAutoController->hacerConsultaTodosAutos();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,8 +35,6 @@ $objAutoController->hacerConsultaTodosAutos();
     <link rel="stylesheet" href="../../css/estilosheader.css">
     <link rel="stylesheet" href="../../css/estilosFooter.css">
     
-
-
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Last-Modified" content="0">
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
@@ -42,7 +43,6 @@ $objAutoController->hacerConsultaTodosAutos();
 </head>
 
 <body>
-
 
     <header id="header-container">
         <span id="logo-nav">
@@ -167,7 +167,8 @@ $objAutoController->hacerConsultaTodosAutos();
     <script src="../../js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
     <script src="../../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <script src="../../js/jsAgregarAuto.js"></script>
-
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </body>
 
 </html>

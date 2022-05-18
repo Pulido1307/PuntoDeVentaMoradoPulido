@@ -1,3 +1,11 @@
+<?php
+if (array_key_exists('error', $_REQUEST)) {
+    if (isset($_REQUEST['error'])) {
+        $aux = $_REQUEST['error'];
+        echo "<script>alert('$aux');</script>";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +32,6 @@
         <div class="container_triangle"></div>
         <h2 class="formulario_header">Ventas</h2>
         <form class="formulario_container" id="formulario" name="formulario" action="tablaVentaView.php" method="post">
-            <p><input type="text" name="input_ns" id="input_ns" placeholder="Número de Serie del Auto" required class="classinput"></p>
             <p><input type="text" name="input_rfc" id="input_rfc" placeholder="RFC del Cliente" required class="classinput"></p>
             <p><input type="submit" value="Generar venta" class="classinput" name="venta"></p>
         </form>

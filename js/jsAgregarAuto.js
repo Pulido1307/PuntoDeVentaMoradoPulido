@@ -68,6 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 var jsonData = JSON.parse(response);
                 console.log(jsonData);
                 alert(jsonData);
+
+                if(jsonData.toString() == 'Se guardaron los datos con exito.'){
+                    window.location.href = '/MoradoSalvadorPulidoAntonio/MVC/Views/index.php';
+                }else{
+                    alert('Ocurrió un problema al registrar');
+                }
                 // if (jsonData.success == "1") //respuesta exitosa envia a otro archivo
                 // {
                 //     location.href = 'paginaredireccionasiesexitosa.php';
